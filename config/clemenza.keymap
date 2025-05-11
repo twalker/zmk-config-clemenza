@@ -106,7 +106,7 @@
 
         default_layer {
 /* COLEMAK DH
- *
+ *                                     --==   Clemenza   ==--
  * ,----------------------------------.                      ,----------------------------------.
  * |   Q  |   W  |   F  |   P  |   B  |                      |   J  |   L  |   U  |   Y  |   '  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
@@ -114,15 +114,19 @@
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |   Z  |   X  |   C  |   D  |   V  |                      |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'                      `----------------------------------'
- *            ,-----------------------.                      ,-----------------------.
- *            | NUM | SYM | NAV | MSE |                      | ESC | NAV | VIM | WIN |
- *            `-----------------------'                      `-----------------------'
+   ,----------------------------------.                      ,----------------------------------.
+ * |  ?   |   ?  | NUM  |  SYM |  NAV |                      | NAV  | VIM  | WIN  |  ?   |  ?   |
+ * `----------------------------------'                      `----------------------------------'
+ *                          ,---------.
+ *                          |   MSE   |
+ *                          `---------'
  */
             bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-                &mo NUM     &lt SYM ESC &lt NAV BSPC &mo MSE        &kp ESC &lt NAV SPACE &lt VIM ENTER &mo WIN
+    &none       &none       &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &none   &none
+    &mo MSE
             >;
         };
 
@@ -131,7 +135,8 @@
     &kp EXCL    &kp AT    &kp LBRC &kp RBRC &kp PIPE        &kp AMPS  &kp ASTRK &kp LT    &kp GT    &kp SQT
     &kp HASH    &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE       &kp MINUS &kp EQUAL &kp PLUS  &kp UNDER &kp SEMI
     &kp PRCNT   &kp CARET &kp LBKT &kp RBKT &kp TILDE       &kp BSLH  &kp COLON &kp COMMA &kp DOT   &kp FSLH
-                &trans    &trans   &trans   &trans          &trans    &trans    &trans    &trans
+    &trans      &trans    &trans   &trans   &trans          &trans    &trans    &trans    &trans    &trans
+    &trans
           >;
       };
 
@@ -140,7 +145,8 @@
     &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
     &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
     &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
-              &trans    &trans    &kp DEL   &trans        &trans          &kp TAB   &trans   &trans
+    &trans    &trans    &trans    &trans    &kp DEL       &kp TAB         &trans    &trans   &trans    &trans
+    &trans
             >;
       };
 
@@ -149,7 +155,8 @@
     &kp F1    &kp F2    &kp F3    &kp F4    &none         &none     &kp N7    &kp N8    &kp N9    &kp N0
     &kp F5    &kp F6    &kp F7    &kp F8    &none         &none     &kp N4    &kp N5    &kp N6    &none
     &kp F9    &kp F10   &kp F11   &kp F12   &none         &none     &kp N1    &kp N2    &kp N3    &none
-              &trans    &trans    &trans    &trans        &none     &none     &kp N0     &kp DOT
+    &trans    &trans    &trans    &trans    &trans        &none     &kp N0    &kp DOT   &trans    &trans
+    &trans
            >;
       };
 
@@ -157,8 +164,9 @@
             bindings = <
     &bt BT_CLR &none &kp C_VOL_UP &none &bt BT_SEL 0              &none  &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
     &out OUT_TOG  &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1     &kp LS(LG( N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
-    &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2              &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
-          &trans &trans &trans &bootloader                        &bootloader &trans &trans &trans
+    &none  &none  &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2            &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
+    &trans &trans &trans &trans &bootloader                       &bootloader &trans &trans &trans &trans
+    &trans
            >;
       };
 
@@ -167,7 +175,8 @@
     &trans  &none          &mmv MOVE_UP   &none           &trans       &trans          &msc SCRL_UP    &trans    &trans   &trans
     &trans  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
     &trans  &trans         &trans         &trans          &trans       &trans          &msc SCRL_DOWN  &trans    &trans   &trans
-            &trans         &kp LCTL       &kp LSFT        &trans       &trans          &kp LSFT        &kp LGUI  &trans
+    &trans  &trans         &trans         &kp LCTL        &kp LSFT     &kp LSFT        &kp LGUI        &trans    &trans   &trans
+    &trans
             >;
       };
         vim_layer {
@@ -175,7 +184,8 @@
     &trans  &trans         &trans         &trans          &trans       &trans          &trans        &vim_w_u  &trans     &trans
     &trans  &trans         &trans         &trans          &trans       &trans          &vim_w_l      &vim_w_d  &vim_w_r   &trans
     &trans  &trans         &trans         &trans          &trans       &kp LS(H)       &trans        &trans    &trans     &kp LS(L)
-            &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans
+    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans     &trans
+    &trans
             >;
       };
     };
