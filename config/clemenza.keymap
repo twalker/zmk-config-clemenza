@@ -172,10 +172,10 @@
 
         mse_layer {
             bindings = <
-    &trans  &msc SCRL_UP    &none          &trans          &trans           &trans          &msc SCRL_UP    &trans    &trans   &trans
-    &msc SCRL_LEFT &mkp MB2 &mkp MB3      &mkp MB1        &msc SCRL_RIGHT  &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
-    &trans  &msc SCRL_DOWN &trans         &trans          &trans           &trans          &msc SCRL_DOWN  &trans    &trans   &trans
-    &kp LCTRL &kp LSHFT    &trans         &kp LCTL        &kp LSFT         &kp LSFT        &kp LGUI        &trans    &trans   &trans
+    &trans    &msc SCRL_UP   &none       &trans       &trans                &trans          &msc SCRL_UP    &trans    &trans   &trans
+    &msc SCRL_LEFT &mkp MB2  &mkp MB3    &mkp MB1     &msc SCRL_RIGHT       &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
+    &trans    &msc SCRL_DOWN &trans      &trans       &trans                &trans          &msc SCRL_DOWN  &trans    &trans   &trans
+    &kp LCTRL &kp LSHFT      &trans      &kp LCTL     &kp LSFT              &kp LSFT        &kp LGUI        &trans    &trans   &trans
     &trans
             >;
       };
