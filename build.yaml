@@ -22,4 +22,4 @@ include:
   - board: nice_nano_v2
     shield: clemenza_left nice_view
   - board: nice_nano_v2
-    shield: clemenza_right nice_view
+    shield: clemenza_right
