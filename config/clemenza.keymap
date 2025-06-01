@@ -125,7 +125,7 @@
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-    &none       &none       &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &none   &none
+    &kp N1      &kp N2      &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &kp N3  &kp N4
     &mo MSE
             >;
         };
