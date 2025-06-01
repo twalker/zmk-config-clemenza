@@ -20,7 +20,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: clemenza_left
+    shield: clemenza_left nice_view
   - board: nice_nano_v2
     shield: clemenza_right
   - board: nice_nano_v2
