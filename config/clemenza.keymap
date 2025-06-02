@@ -10,7 +10,6 @@
 #define NUM     3
 #define WIN     4
 #define MSE     5
-#define VIM     6
 
 &lt {
   quick_tap_ms = <200>;
@@ -48,49 +47,6 @@
         };
     };
 
-    macros {
-        vim_w_l: vim_w_l {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp H>
-                ;
-        };
-        vim_w_d: vim_w_d {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp J>
-                ;
-        };
-        vim_w_u: vim_w_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp K>
-                ;
-        };
-        vim_w_r: vim_w_r {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp L>
-                ;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -125,68 +81,9 @@
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-    &kp N1      &kp N2      &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &kp N3  &kp N4
-    &mo MSE
+    &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6  &kp N7      &kp N8      &kp N9      &kp N0
+    &kp M
             >;
         };
-
-        sym_layer {
-            bindings = <
-    &kp EXCL    &kp AT    &kp LBRC &kp RBRC &kp PIPE        &kp AMPS  &kp ASTRK &kp LT    &kp GT    &kp SQT
-    &kp HASH    &kp DLLR  &kp LPAR &kp RPAR &kp GRAVE       &kp MINUS &kp EQUAL &kp PLUS  &kp UNDER &kp SEMI
-    &kp PRCNT   &kp CARET &kp LBKT &kp RBKT &kp TILDE       &kp BSLH  &kp COLON &kp COMMA &kp DOT   &kp FSLH
-    &trans      &trans    &trans   &trans   &trans          &trans    &trans    &trans    &trans    &trans
-    &trans
-          >;
-      };
-
-        nav_layer {
-            bindings = <
-    &none     &none     &none     &none     &none         &none           &kp PG_UP &kp UP   &none     &kp INS
-    &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME        &kp LEFT  &kp DOWN &kp RIGHT &kp END
-    &kp LG(Z) &kp LG(X) &kp LG(C) &kp K_APP &kp LG(V)     &kp LS(LC(TAB)) &kp PG_DN &none    &none     &kp LC(TAB)
-    &trans    &trans    &trans    &trans    &kp DEL       &kp TAB         &trans    &trans   &trans    &trans
-    &trans
-            >;
-      };
-
-        num_layer {
-            bindings = <
-    &kp F1    &kp F2    &kp F3    &kp F4    &none         &none     &kp N7    &kp N8    &kp N9    &kp N0
-    &kp F5    &kp F6    &kp F7    &kp F8    &none         &none     &kp N4    &kp N5    &kp N6    &none
-    &kp F9    &kp F10   &kp F11   &kp F12   &none         &none     &kp N1    &kp N2    &kp N3    &none
-    &trans    &trans    &trans    &trans    &trans        &none     &kp N0    &kp DOT   &trans    &trans
-    &trans
-           >;
-      };
-
-        win_layer {
-            bindings = <
-    &bt BT_CLR &none &kp C_VOL_UP &none &bt BT_SEL 0              &none  &kp LG(EQUAL) &kp LC(LA(UP)) &kp LC(LA(EQUAL)) &none
-    &out OUT_TOG  &kp C_PREV &kp C_PP &kp C_NEXT &bt BT_SEL 1     &kp LS(LG( N5)) &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(RIGHT)) &kp LC(LA(RET))
-    &none  &none  &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2            &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none &none
-    &trans &trans &trans &trans &bootloader                       &bootloader &trans &trans &trans &trans
-    &trans
-           >;
-      };
-
-        mse_layer {
-            bindings = <
-    &trans    &msc SCRL_UP   &none       &trans       &trans                &trans          &msc SCRL_UP    &trans    &trans   &trans
-    &msc SCRL_LEFT &mkp MB2  &mkp MB3    &mkp MB1     &msc SCRL_RIGHT       &msc SCRL_LEFT  &mkp MB1        &mkp MB3  &mkp MB2 &msc SCRL_RIGHT
-    &trans    &msc SCRL_DOWN &trans      &trans       &trans                &trans          &msc SCRL_DOWN  &trans    &trans   &trans
-    &kp LCTRL &kp LSHFT      &trans      &kp LCTL     &kp LSFT              &kp LSFT        &kp LGUI        &trans    &trans   &trans
-    &trans
-            >;
-      };
-        vim_layer {
-            bindings = <
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &vim_w_u  &trans     &trans
-    &trans  &trans         &trans         &trans          &trans       &trans          &vim_w_l      &vim_w_d  &vim_w_r   &trans
-    &trans  &trans         &trans         &trans          &trans       &kp LS(H)       &trans        &trans    &trans     &kp LS(L)
-    &trans  &trans         &trans         &trans          &trans       &trans          &trans        &trans    &trans     &trans
-    &trans
-            >;
-      };
-    };
+   };
 };
