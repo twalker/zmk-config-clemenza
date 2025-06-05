@@ -1,4 +1,4 @@
-if SHIELD_CLEMENZA_LEFT
+if SHIELD_PENTANGELI_RIGHT
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
@@ -16,9 +16,3 @@ config ZMK_SPLIT
 
 endif
 
-if SHIELD_CLEMENZA_RIGHT
-
-config SPI
-    default y
-
-endif
