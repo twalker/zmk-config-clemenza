@@ -127,7 +127,7 @@
 
             bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B           &lt MSE J &kp L     &kp U       &kp Y       &kp SQT
-    &hm LCTRL A &hml LALT R  &hml LGUI S  &hml LSHFT T &kp G        &kp M   &hmr RSHFT N &hmr RGUI E  &hmr LALT I  &hmr RCTRL O
+    &hml LCTRL A &hml LALT R  &hml LGUI S  &hml LSHFT T &kp G        &kp M   &hmr RSHFT N &hmr RGUI E  &hmr LALT I  &hmr RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
     &kp LS(H)   &kp LS(L)   &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &kp LG(LS(LBKT))  &kp LG(LS(RBKT))
     &mo MSE
