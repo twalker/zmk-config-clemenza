@@ -19,32 +19,27 @@
 / {
 
     behaviors {
-        hm: homerow_mods {
+        hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < ... >; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
         };
-        hs: homerow_mods_slow {
+        hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
-        };
-        hf: homerow_mods_fast {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_FAST";
-            #binding-cells = <2>;
-            tapping-term-ms = <110>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < ... >; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
         };
     };
 
@@ -124,7 +119,7 @@
 
             bindings = <
     &kp Q       &kp W       &kp F       &kp P       &kp B           &lt MSE J &kp L     &kp U       &kp Y       &kp SQT
-    &hm LCTRL A &hs LALT R  &hm LGUI S  &hf LSHFT T &kp G           &kp M   &hf RSHFT N &hm RGUI E  &hs LALT I  &hm RCTRL O
+    &hm LCTRL A &hml LALT R  &hml LGUI S  &hml LSHFT T &kp G        &kp M   &hmr RSHFT N &hmr RGUI E  &hmr LALT I  &hmr RCTRL O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
     &kp LS(H)   &kp LS(L)   &mo NUM     &lt SYM ESC &lt NAV BSPC    &lt NAV SPACE &lt VIM ENTER &mo WIN &kp LG(LS(LBKT))  &kp LG(LS(RBKT))
     &mo MSE
